@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [[ $# -eq 1 ]]; then
-    git config --global user.name "JiYou"
-    git config --global user.email "jiyou09@gmail.com"
+    git config --global user.name "zhangqingzheng"
+    git config --global user.email "zhangqingzheng@qq.com"
     git remote rm origin
     git remote add origin git@github.com:JiYou/openstack.git
     tsocks git add .
