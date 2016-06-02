@@ -37,8 +37,8 @@ popd
 pushd chap04
 sed -i 's,$ip_old,$ip_new,g' ./localrc
 #apt-get install nfs-common rpcbind nfs-kernel-server
-mkdir -p /var/www/html
-echo "/var/www/html *(insecure,rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports 
+#mkdir -p /var/www/html
+#echo "/var/www/html *(insecure,rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports 
 ./swift.sh
 ./swift-storage.sh
 popd
@@ -55,7 +55,7 @@ mv /etc/network/interfaces /etc/network/interfaces.bak
 cp -rf ./interfaces /etc/network/
 ifconfig eth3 down 
 ifconfig eth3 0.0.0.0 up
-ip link eth3 promisc on
+#ip link eth3 promisc on
 ovs-vsctl add-port br-ex eth3
 ifdown br-ex
 ifup br-ex
