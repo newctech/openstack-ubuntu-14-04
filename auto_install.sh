@@ -1,7 +1,10 @@
-!#/bin/bash
+#!/bin/bash
+
 set -e
 set -o xtrace
 
+./init.sh
+./create_link.sh
 chap03/mysql/mysql.sh
 chap03/rabbitmq/rabbitmq.sh
 chap03/keystone/keystone.sh
