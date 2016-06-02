@@ -51,8 +51,8 @@ sed -i 's,$ip_old,$ip_new,g' ./localrc
 ./quantum.sh
 ./quantum-agent.sh
 popd
-mv /etc/network/interface /etc/network/interface.bak
-cp -rf ./interface /etc/network/
+mv /etc/network/interfaces /etc/network/interfaces.bak
+cp -rf ./interfaces /etc/network/
 ifconfig eth3 down 
 ifconfig eth3 0.0.0.0 up
 ip link eth3 promisc on
