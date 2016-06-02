@@ -7,6 +7,7 @@ ip_new="192.168.56.180"
  
 apt-get clean
 pushd /var/lib/apt
+rm -rf  lists.old
 mv lists lists.old
 mkdir -p lists/partial
 popd
@@ -50,7 +51,8 @@ sed -i 's,$ip_old,$ip_new,g' ./localrc
 ./quantum.sh
 ./quantum-agent.sh
 popd
-cp -rf interface /etc/network/
+mv /etc/network/interface /etc/network/interface.bak
+cp -rf ./interface /etc/network/
 ifconfig eth3 down 
 ifconfig eth3 0.0.0.0 up
 ip link eth3 promisc on
