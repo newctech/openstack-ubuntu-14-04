@@ -3,13 +3,13 @@
 #---------------------------------------------
 
 MYSQL_ROOT_PASSWORD=mysqlpassword
-MYSQL_HOST=192.168.56.101
+MYSQL_HOST=192.168.56.180
 
 #---------------------------------------------
 # RabbitMQ Service
 #---------------------------------------------
 
-RABBITMQ_HOST=192.168.56.101
+RABBITMQ_HOST=192.168.56.180
 RABBITMQ_USER=guest
 RABBITMQ_PASSWORD=guest
 
