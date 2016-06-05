@@ -22,7 +22,9 @@ apt-get upgrade python-oslo.config
 popd
 pushd chap04
 sed -i '/192.168.56.180/s/192.168.56.180/192.168.56.181/g' ./localrc
-apt-get install nfs-common
+apt-get install nfs-common rpcbind nfs-kernel-server
+mkdir -p /var/www/html
+echo "/var/www/html *(insecure,rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports 
 ./swift.sh
 ./swift-storage.sh
 popd
