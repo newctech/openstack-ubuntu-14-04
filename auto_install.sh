@@ -3,6 +3,14 @@
 set -e
 set -o xtrace
 
+apt-get clean
+pushd /var/lib/apt
+mv lists lists.old
+mkdir -p lists/partial
+popd
+apt-get clean
+apt-get update 
+
 ./init.sh
 ./create_link.sh
 pushd  chap03/mysql
